@@ -15,7 +15,7 @@
     "url": "https://github.com/EQWorks/widget-studio.git"
   },
   "engines": {
-    "node": "14.x"
+    "node": "20.x"
   },
   "scripts": {
     "lint": "eslint .*.js *.js stories/ src/",
