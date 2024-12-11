@@ -31,7 +31,7 @@
   "peerDependencies": {
     "@eqworks/lumen-labs": "0.1.0-alpha.41",
     "@eqworks/react-labs": "^1.12.1-alpha.5",
-    "@eqworks/react-maps": "file:./eqworks-deps/eqworks-react-maps-v0.8.5.tgz",
+    "@eqworks/react-maps": "file:./eqworks-deps/eqworks-react-maps-v0.8.5-kyle.tgz",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
@@ -51,7 +51,7 @@
     "@babel/preset-react": "^7.10.4",
     "@eqworks/lumen-labs": "0.1.0-alpha.41",
     "@eqworks/react-labs": "^1.12.1-alpha.5",
-    "@eqworks/react-maps": "file:./eqworks-deps/eqworks-react-maps-v0.8.5.tgz",
+    "@eqworks/react-maps": "file:./eqworks-deps/eqworks-react-maps-v0.8.5-kyle.tgz",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",

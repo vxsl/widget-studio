@@ -1391,9 +1391,9 @@
     slick-carousel "^1.8.1"
     use-cached "^2.0.0"
 
-"@eqworks/react-maps@file:./eqworks-deps/eqworks-react-maps-v0.8.5.tgz":
-  version "0.8.5"
-  resolved "file:./eqworks-deps/eqworks-react-maps-v0.8.5.tgz#0589937f26ad9ba7b48d3a10af121e9bbf7ae818"
+"@eqworks/react-maps@file:./eqworks-deps/eqworks-react-maps-v0.8.5-kyle.tgz":
+  version "0.8.5-kyle"
+  resolved "file:./eqworks-deps/eqworks-react-maps-v0.8.5-kyle.tgz#976bc4cb7770fdbba6ce05babf078655192f557b"
   dependencies:
     "@deck.gl/aggregation-layers" "8.4.6"
     "@deck.gl/core" "8.4.6"
