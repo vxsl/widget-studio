@@ -1336,8 +1336,8 @@
 
 "@eqworks/chart-system@^0.6.3-alpha.12":
   version "0.6.3-alpha.12"
-  resolved "https://npm.pkg.github.com/download/@eqworks/chart-system/0.6.3-alpha.12/e2a06e70f148d4815a392373b98ea5ffc6b29e8937fba6ff701bc69f6a84d7e6#95eb897548ef32d9ca4aaaa5b3f2bf4553c84b55"
-  integrity sha512-iDRvYP5sh+w7tOfOjafKQpeTt8b+jahiSEkyBPVq/+h6DvgEgjZqepVS86airW2o7Ez/128QnHHz0UuRck7TNQ==
+  resolved "https://registry.yarnpkg.com/@eqworks/chart-system/-/chart-system-0.6.3-alpha.12.tgz#7f6d1a605bc12928714250dbffdcc179071fa9db"
+  integrity sha512-HN+JM7xOry42iF7blyBQT91RBJ1tvjQaJXkjwQd+qQ5bx/TmcMtacibiYto2zY91xOVLf0UiOHhaBJJlhLWpZg==
   dependencies:
     "@nivo/bar" "^0.62.0"
     "@nivo/core" "^0.62.0"
@@ -1364,22 +1364,10 @@
     prop-types "^15.7.2"
     react-resize-detector "^7.0.0"
 
-"@eqworks/common-login@^0.9.0-alpha.13":
-  version "0.9.0-alpha.13"
-  resolved "https://npm.pkg.github.com/download/@eqworks/common-login/0.9.0-alpha.13/7c436af882950783afc7517363ab69f9e57982511610527effc6bf623482dbc3#8019aaf9eb1d620ba713b021e0963e19444f50f6"
-  integrity sha512-nETOVT/78Vnne6VCXj0iCWZ9lNy/NgP8LGtXm9w8GO+AMhaUIH/7Per6ImQa9SZxS9E78lxGIH3HWm1dyjD1/A==
-  dependencies:
-    cross-domain-storage "^2.0.5"
-    moment-timezone "^0.5.31"
-    prop-types "^15.7.2"
-    query-string "^7.0.1"
-    react-iframe "^1.8.0"
-    react-router-prop-types "^1.0.4"
-
-"@eqworks/lumen-labs@^0.1.0-alpha.41":
+"@eqworks/lumen-labs@0.1.0-alpha.41":
   version "0.1.0-alpha.41"
-  resolved "https://npm.pkg.github.com/download/@eqworks/lumen-labs/0.1.0-alpha.41/06d1bfbfa5551f0459af60d9874166704d225b7ee6a830586e6fb278903396e6#77313040a8775ee86f7209163104f05aceb1b885"
-  integrity sha512-R2udHDgiM6fb8tC+PnVT8XKfeMah+mPH+XsgC20LXq/0eoZ1eULEWC/CsLeEFVZmHDHlsUPrqT2eDTLfbSHP1Q==
+  resolved "https://registry.yarnpkg.com/@eqworks/lumen-labs/-/lumen-labs-0.1.0-alpha.41.tgz#2e1a2d4815e4670af12295b6b7df92d31add97db"
+  integrity sha512-vk92pmO2EzaPv+aZHoFMCMwtjqFAv/SSZG88Ja42L+JQ9QQHA74lYlm453oJ5MtX2kvy6d2ietsQjlI7Qg0Crw==
   dependencies:
     "@headlessui/react" "^1.4.0"
     clsx "^1.1.1"
@@ -1392,8 +1380,8 @@
 
 "@eqworks/react-labs@^1.12.1-alpha.5":
   version "1.12.1-alpha.5"
-  resolved "https://npm.pkg.github.com/download/@eqworks/react-labs/1.12.1-alpha.5/b1db590dc3bcb6847c52b64b27f17abac254206973833fda97f47f97e7acb80e#f154e5f73d36f414f943420685ec2c574ba9ad94"
-  integrity sha512-4Ptu0saalbwymt47Te7w/gBd8Tp4QmWtHQfXKumf/R7A0TR67s8x//m9Qjj27y9/meabm4RFtyDxaZTHIOwrQA==
+  resolved "https://registry.yarnpkg.com/@eqworks/react-labs/-/react-labs-1.12.1-alpha.5.tgz#9a33296bb6f2d6c29fc0696c8ce3d93d724b3232"
+  integrity sha512-epHW4P40BTJ/YFRnLf19fQhWp29GFiKhURnL8Rn8PsgMpKMML0LdEgeMKI395UvNQkhJV3LMdfdBN+J2u4I2rQ==
   dependencies:
     axios "^0.20.0"
     clsx "^1.1.1"
@@ -1403,10 +1391,9 @@
     slick-carousel "^1.8.1"
     use-cached "^2.0.0"
 
-"@eqworks/react-maps@^0.8.5":
+"@eqworks/react-maps@file:./eqworks-deps/eqworks-react-maps-v0.8.5.tgz":
   version "0.8.5"
-  resolved "https://npm.pkg.github.com/download/@eqworks/react-maps/0.8.5/6caeaafc8de309a7314bb3e153a7d13a6348702c94824ed233d187b69ed4342c#249ee134d90744259ebc3ecafe9baacae8ba95b3"
-  integrity sha512-Po3p+pMLttl3yBAV557uHKkK8aL6853cIENIKsVvMyXk0+R/Q7iZlMq0DshZUG3uy1PDxAF+tx2Q/17+J+CrLA==
+  resolved "file:./eqworks-deps/eqworks-react-maps-v0.8.5.tgz#0589937f26ad9ba7b48d3a10af121e9bbf7ae818"
   dependencies:
     "@deck.gl/aggregation-layers" "8.4.6"
     "@deck.gl/core" "8.4.6"
@@ -3803,7 +3790,7 @@
   resolved "https://registry.yarnpkg.com/@types/pretty-hrtime/-/pretty-hrtime-1.0.1.tgz#72a26101dc567b0d68fd956cf42314556e42d601"
   integrity sha512-VjID5MJb1eGKthz2qUerWT8+R4b9N+CHvGCzg9fn4kWZgaF9AhdYikQio3R7wV8YY1NsQKPaCwKz1Yff+aHNUQ==
 
-"@types/prop-types@*", "@types/prop-types@^15.7.3":
+"@types/prop-types@*":
   version "15.7.4"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
@@ -5745,11 +5732,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
-
-cross-domain-storage@^2.0.5:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/cross-domain-storage/-/cross-domain-storage-2.0.7.tgz#d4d738a9d3651bf581f5aa46eca8f90814984d2c"
-  integrity sha512-IWaLY2NbAxX5yYxgNxQVx4HzWM2+LZi8LQPS4ILXX3JFF2TQ2rpph0Rh1kRWN8AZ01W0YuLY1FidqVWTyD5mBQ==
 
 cross-spawn@^6.0.0:
   version "6.0.5"
@@ -10034,18 +10016,6 @@ modern-normalize@^1.1.0:
   resolved "https://registry.yarnpkg.com/modern-normalize/-/modern-normalize-1.1.0.tgz#da8e80140d9221426bd4f725c6e11283d34f90b7"
   integrity sha512-2lMlY1Yc1+CUy0gw4H95uNN7vjbpoED7NNRSBHE25nWfLBdmMzFCsPshlzbxHz+gYMcBEUN8V4pU16prcdPSgA==
 
-moment-timezone@^0.5.31:
-  version "0.5.34"
-  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.34.tgz#a75938f7476b88f155d3504a9343f7519d9a405c"
-  integrity sha512-3zAEHh2hKUs3EXLESx/wsgw6IQdusOT8Bxm3D9UrHPQR7zlMmzwybC8zHEM1tQ4LJwP7fcxrWr8tuBg05fFCbg==
-  dependencies:
-    moment ">= 2.9.0"
-
-"moment@>= 2.9.0":
-  version "2.29.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
-  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
-
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -11593,16 +11563,6 @@ query-string@^6.13.8:
     split-on-first "^1.0.0"
     strict-uri-encode "^2.0.0"
 
-query-string@^7.0.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/query-string/-/query-string-7.1.1.tgz#754620669db978625a90f635f12617c271a088e1"
-  integrity sha512-MplouLRDHBZSG9z7fpuAAcI7aAYjDLhtsiVZsevsfaHWDS2IDdORKbSd1kWUA+V4zyva/HZoSfpwnYMMQDhb0w==
-  dependencies:
-    decode-uri-component "^0.2.0"
-    filter-obj "^1.1.0"
-    split-on-first "^1.0.0"
-    strict-uri-encode "^2.0.0"
-
 querystring-es3@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/querystring-es3/-/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
@@ -11795,13 +11755,6 @@ react-helmet-async@^1.0.7:
     react-fast-compare "^3.2.0"
     shallowequal "^1.1.0"
 
-react-iframe@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/react-iframe/-/react-iframe-1.8.0.tgz#8c78f2c59b894ca5605fa7e45e61e27e57e96091"
-  integrity sha512-NYi89+rEqREwQxW9sDf+akh6/dtwWd3bOjByoVEIQ7SicOxVawRMer3pLdWjFaHXpuxTB9NqobPf/Ohj2iAKkg==
-  dependencies:
-    object-assign "^4.1.1"
-
 react-inspector@^5.1.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-5.1.1.tgz#58476c78fde05d5055646ed8ec02030af42953c8"
@@ -11950,14 +11903,6 @@ react-router-dom@~5.2.0:
     react-router "5.2.1"
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
-
-react-router-prop-types@^1.0.4:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/react-router-prop-types/-/react-router-prop-types-1.0.5.tgz#2e671d8412a793106bf70dc15c9ecc83ea4bc15b"
-  integrity sha512-q1xlFU2ol2U5zeVbA5hyBuxD3scHenqgMgCTuJQUanA2SyG8A3Fb1S6DleOo1cnGJB5Q05hnLge64kRj+xsuPA==
-  dependencies:
-    "@types/prop-types" "^15.7.3"
-    prop-types "^15.7.2"
 
 react-router@5.2.1:
   version "5.2.1"
