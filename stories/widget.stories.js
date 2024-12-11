@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react'
 import { Resizable } from 're-resizable'
 
 import { ReactQueryDevtools } from 'react-query/devtools'
-import { Authenticated } from '@eqworks/common-login'
 
 import modes from '../src/constants/modes'
 import sampleData from './sample-data'
@@ -16,6 +15,7 @@ import { makeStyles } from '@eqworks/lumen-labs'
 import CustomButton from '../src/components/custom-button'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
+const Authenticated = ({ children }) => children
 
 const DEFAULT_WL = 2456
 const DEFAULT_CU = 27848
