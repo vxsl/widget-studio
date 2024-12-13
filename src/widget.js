@@ -22,9 +22,9 @@ import CustomModal from './components/custom-modal'
 const commonClasses = {
   innerContainer: {
     width: '100%',
-    height: '100%',
+    // height: '100%',
     flex: 1,
-    minHeight: 0,
+    // minHeight: 0,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'end',
@@ -40,8 +40,8 @@ const useStyles = (mode = modes.EDITOR) => makeStyles(
         backgroundColor: getTailwindConfigColor('secondary-50'),
         display: 'flex',
         flexDirection: 'column',
-        width: '100vw',
-        minHeight: '100%',
+        // width: '100vw',
+        // minHeight: '100%',
       },
       ...commonClasses,
     }
