@@ -1,11 +1,11 @@
 import { getTailwindConfigColor } from '@eqworks/lumen-labs'
 import { computed, action, thunk, thunkOn } from 'easy-peasy'
 
+import { localGetWidget, requestData } from '../util/api'
 import types from '../constants/types'
 import typeInfo from '../constants/type-info'
 import { COLOR_REPRESENTATIONS, DEFAULT_PRESET_COLORS } from '../constants/color'
 import { cleanUp } from '../util/string-manipulation'
-import { createWidget, saveWidget, getWidget, localGetWidget, requestData } from '../util/api'
 import { geoKeyHasCoordinates } from '../util'
 import {
   MAP_LAYERS,
@@ -463,32 +463,6 @@ export default {
   }),
 
   save: thunk(async (actions, _, { getState }) => {
-    const { config, tentativeConfig, id, wl, cu } = getState()
-    if (!config) {
-      actions.toast({
-        title: `The widget is not configured yet, but will be ${id ? 'saved' : 'created'} anyway.`,
-        color: 'warning',
-      })
-    }
-    const snapshot = await actions.getScreenshotBase64()
-    const saveFn = id && !`${id}`.startsWith('dev-')
-      ? saveWidget
-      : createWidget
-    saveFn({ config: tentativeConfig, snapshot, id, whitelabel: wl, customer: cu })
-      .then(({ status }) => {
-        if (`${status}`.startsWith('2')) {
-          actions.update({ unsavedChanges: false })
-          actions.toast({
-            title: 'Widget saved successfully',
-            color: 'success',
-          })
-        } else {
-          actions.toast({
-            title: 'There was en error saving your widget',
-            color: 'error',
-          })
-        }
-      })
   }),
 
   loadConfigByID: thunk(async (actions, payload, { getState }) => {
@@ -498,9 +472,7 @@ export default {
       id: payload,
     })
     const { sampleConfigs } = getState()
-    const getFn = sampleConfigs
-      ? localGetWidget
-      : getWidget
+    const getFn = localGetWidget
     getFn(payload, sampleConfigs)
       .then(({ config, updated_at, created_at }) => {
         actions.update({

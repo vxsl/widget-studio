@@ -7,8 +7,7 @@ import { useStoreState } from '../store'
 
 export const api = axios.create({
   baseURL: [
-    process.env.API_HOST || process.env.STORYBOOK_API_HOST || 'http://localhost:3000',
-    process.env.API_STAGE || process.env.STORYBOOK_API_STAGE || '',
+    '', '',
   ].filter(v => v).join('/'),
 })
 

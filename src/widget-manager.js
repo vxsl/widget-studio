@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 
-import { useQuery } from 'react-query'
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en.json'
 import ReactTimeAgo from 'react-time-ago'
@@ -11,7 +10,6 @@ import Widget from './widget'
 import withQueryClient from './util/with-query-client'
 import CustomSelect from './components/custom-select'
 import CustomButton from './components/custom-button'
-import { deleteWidget, api } from './util/api'
 import CustomModal from './components/custom-modal'
 
 
@@ -267,59 +265,16 @@ const SORTING = {
 }
 
 const useWidgets = (wlID, cuID) => {
-  const _key = `Get Widgets for ${wlID} and ${cuID}`
-  const { isError, error, isLoading, refetch, data = [] } = useQuery(
-    _key,
-    () => api.get('/widget-studio/widgets', { params: { wlID } }).then(({ data = [] }) => data),
-    { manual: true, refetchOnWindowFocus: false }
-  )
-  useEffect(() => {
-    if (isError) {
-      console.error(`${_key}: ${error.message}`)
-    }
-  }, [isError, error, _key])
-  return [isLoading, data, refetch]
+  return [false, [], () => {}]
 }
 
 const useReports = (dealer) => {
-  const key = `Get Reports for dealer ${dealer}`
-  const { isError, error, isLoading, data = [] } = useQuery(
-    key,
-    () => api.get('/insights/reports/all', {
-      params: {
-        page: 1,
-        limit: 90,
-        dealer,
-      },
-    }).then(({ data: { items } }) => {
-      // console.dir(items)
-      return items
-    }),
-    { refetchOnWindowFocus: false },
-  )
-  useEffect(() => {
-    if (isError) {
-      console.error(`${key}: ${error.message}`)
-    }
-  }, [isError, error, key])
-  return [isLoading, data]
+  return [false, []]
 }
 
 const useDashboards = (reportID) => {
-  const key = `Get Dashboards for report ${reportID}`
-  const { isError, error, isLoading, data = [] } = useQuery(
-    key,
-    () => api.get(`/insights/dashboards/${reportID}`).then(({ data }) => data),
-    { refetchOnWindowFocus: false },
-  )
-  useEffect(() => {
-    if (isError) {
-      console.error(`${key}: ${error.message}`)
-    }
-  }, [isError, error, key])
-  return [isLoading, data]
+  return [false, []]
 }
-
 
 const WidgetManager = ({ wl, cu, dealer, className }) => {
   const [selectedReport, setSelectedReport] = useState(null)
@@ -411,7 +366,6 @@ const WidgetManager = ({ wl, cu, dealer, className }) => {
                 onClick={() => {
                   if (deleteConfirm === id) {
                     setDeleteConfirm(null)
-                    deleteWidget(id).then(refetchWidgets)
                   } else {
                     setDeleteConfirm(id)
                   }
@@ -557,15 +511,7 @@ const WidgetManager = ({ wl, cu, dealer, className }) => {
                     {
                       selection?.length > 0 && selectedDashboard &&
                       <CustomButton
-                        onClick={() => {
-                          const { id, items, layout } = selectedDashboard
-                          const newItems = selection.filter(id => !items.includes(id))
-                          const newLayout = newItems.map(id => ({ x: 0, y: 0, w: 6, h: 4, i: id }))
-                          api.post(`/insights/dashboards/${id}`, {
-                            items: items.concat(newItems),
-                            layout: layout.concat(newLayout),
-                          })
-                        }}
+                        onClick={() => {}}
                       >
                         <span> {`Add ${selection?.length} widgets to ${selectedDashboard?.label}`} </span>
                       </CustomButton>
