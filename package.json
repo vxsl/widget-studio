@@ -23,7 +23,7 @@
     "storybook": "env $(print-env) start-storybook -p 6008",
     "start": "yarn storybook",
     "dev": "vite",
-    "build": "babel src --out-dir dist --copy-files",
+    "build": "vite build",
     "prepublishOnly": "yarn lint && yarn build",
     "build-storybook": "build-storybook",
     "build-tailwindcss": "npx postcss src/styles/tailwind.css -o src/styles/index.css",
