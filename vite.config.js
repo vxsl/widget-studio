@@ -1,53 +1,66 @@
 import react from '@vitejs/plugin-react'
-import { defineConfig, transformWithEsbuild } from 'vite'
+import { defineConfig, loadEnv, transformWithEsbuild } from 'vite'
 
 
-export default defineConfig({
-  root: './', // Root is your library project
-  plugins: [
-    {
-      name: 'treat-js-files-as-jsx',
-      async transform(code, id) {
-        if (!id.match(/src\/.*\.js$/)) return null
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd())
+  return {
+    root: './', // Root is your library project
+    plugins: [
+      {
+        name: 'treat-js-files-as-jsx',
+        async transform(code, id) {
+          if (!id.match(/src\/.*\.js$/)) return null
 
-        // Use the exposed transform from vite, instead of directly
-        // transforming with esbuild
-        return transformWithEsbuild(code, id, {
-          loader: 'jsx',
-          jsx: 'automatic',
-        })
+          // Use the exposed transform from vite, instead of directly
+          // transforming with esbuild
+          return transformWithEsbuild(code, id, {
+            loader: 'jsx',
+            jsx: 'automatic',
+          })
+        },
+      },
+      {
+        name: 'fix-import-order',
+        enforce: 'pre',
+        transform(code, id) {
+          if (id.endsWith('.css') && code.includes('@import')) {
+            return code.replace(
+              /@import url\('https:\/\/fonts.googleapis.com\/css2[^']+\'\);/,
+              ''
+            )
+          }
+        },
+      },
+      {
+        name: 'inject-umami-tracking',
+        transformIndexHtml(html) {
+          const tag = env.UMAMI_TAG
+          if (!tag) {
+            throw new Error('Please include UMAMI_TAG in .env')
+          }
+          return html.replace('</head>', `${tag}</head>`)
+        },
+      },
+      react(),
+    ],
+
+    optimizeDeps: {
+      force: true,
+      esbuildOptions: {
+        loader: {
+          '.js': 'jsx',
+        },
       },
     },
-    {
-      name: 'fix-import-order',
-      enforce: 'pre',
-      transform(code, id) {
-        if (id.endsWith('.css') && code.includes('@import')) {
-          return code.replace(
-            /@import url\('https:\/\/fonts.googleapis.com\/css2[^']+\'\);/,
-            ''
-          )
-        }
+    resolve: {
+      alias: {
+        process: 'process/browser', // Alias `process` to the browser polyfill
       },
     },
-    react(),
-  ],
-
-  optimizeDeps: {
-    force: true,
-    esbuildOptions: {
-      loader: {
-        '.js': 'jsx',
-      },
+    define: {
+      global: {}, // Some libraries expect `global` to exist
+      'process.env': {}, // Provide an empty `process.env` object
     },
-  },
-  resolve: {
-    alias: {
-      process: 'process/browser', // Alias `process` to the browser polyfill
-    },
-  },
-  define: {
-    global: {}, // Some libraries expect `global` to exist
-    'process.env': {}, // Provide an empty `process.env` object
-  },
+  }
 })
