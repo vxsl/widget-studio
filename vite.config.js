@@ -35,9 +35,9 @@ export default defineConfig(({ mode }) => {
       {
         name: 'inject-umami-tracking',
         transformIndexHtml(html) {
-          const tag = env.UMAMI_TAG
+          const tag = env.VITE_UMAMI_TAG
           if (!tag) {
-            throw new Error('Please include UMAMI_TAG in .env')
+            throw new Error('Please include VITE_UMAMI_TAG in .env')
           }
           return html.replace('</head>', `${tag}</head>`)
         },
